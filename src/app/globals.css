@@ -1,0 +1,314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-space: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+    --font-syne: "Arial Black", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+
+  * {
+    @apply m-0 p-0 box-border;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-bg-void text-text-white;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    min-width: 320px;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid #c084fc;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: rgba(168, 85, 247, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neon-red;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  #scroll-progress {
+    @apply fixed top-0 left-0 right-0 h-0.5 pointer-events-none z-[9999];
+    transform-origin: left center;
+    transform: scaleX(0);
+    background: linear-gradient(to right, #7C3AED, #A855F7, #C084FC);
+  }
+
+  .glow-red {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 0 0 40px rgba(168, 85, 247, 0.3);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.4), 0 0 20px rgba(168, 85, 247, 0.15);
+  }
+
+  .neon-grid {
+    background-image:
+      linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .hash-span {
+    @apply block -mt-[100px] pb-[100px];
+  }
+
+  /* Scanline effect */
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), transparent);
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  /* Glitch animation */
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  .glitch {
+    animation: glitch 0.3s infinite;
+  }
+
+  /* Holographic effect */
+  .holographic {
+    background: linear-gradient(
+      135deg,
+      rgba(168, 85, 247, 0.1) 0%,
+      rgba(124, 58, 237, 0.1) 25%,
+      rgba(147, 51, 234, 0.1) 50%,
+      rgba(192, 132, 252, 0.1) 75%,
+      rgba(168, 85, 247, 0.1) 100%
+    );
+    background-size: 200% 200%;
+    animation: holographic 3s ease infinite;
+  }
+
+  @keyframes holographic {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Neon pulse */
+  .neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(168, 85, 247, 0.5),
+                  0 0 10px rgba(168, 85, 247, 0.3),
+                  0 0 15px rgba(168, 85, 247, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.8),
+                  0 0 20px rgba(168, 85, 247, 0.5),
+                  0 0 30px rgba(168, 85, 247, 0.3);
+    }
+  }
+
+  /* Zentry-style smooth transitions */
+  * {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Gradient text animation */
+  .gradient-text-animate {
+    background: linear-gradient(
+      90deg,
+      #A855F7 0%,
+      #C084FC 25%,
+      #E9D5FF 50%,
+      #C084FC 75%,
+      #A855F7 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s linear infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  /* Smooth scale on hover */
+  .hover-scale {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(168, 85, 247, 0.1);
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Perspective container */
+  .perspective {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  /* Smooth reveal */
+  .reveal {
+    clip-path: inset(0 0 100% 0);
+    animation: reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes reveal {
+    to {
+      clip-path: inset(0 0 0% 0);
+    }
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .glass {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
+}

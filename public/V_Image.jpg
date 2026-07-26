@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#0A0A0A"/>
+  <circle cx="200" cy="160" r="70" fill="none" stroke="#A855F7" stroke-width="2"/>
+  <circle cx="200" cy="160" r="35" fill="#A855F7" opacity="0.3"/>
+  <rect x="100" y="270" width="200" height="120" rx="10" fill="none" stroke="#A855F7" stroke-width="2"/>
+  <rect x="100" y="270" width="200" height="40" rx="10" fill="#A855F7" opacity="0.15"/>
+  <line x1="120" y1="330" x2="280" y2="330" stroke="#333" stroke-width="2"/>
+  <line x1="120" y1="355" x2="250" y2="355" stroke="#333" stroke-width="2"/>
+  <line x1="120" y1="380" x2="260" y2="380" stroke="#333" stroke-width="2"/>
+  <text x="200" y="440" font-family="Arial" font-size="18" fill="#666" text-anchor="middle">Sangeeth karunakaran</text>
+  <text x="200" y="465" font-family="Arial" font-size="12" fill="#555" text-anchor="middle">Full Stack Developer</text>
+</svg>
