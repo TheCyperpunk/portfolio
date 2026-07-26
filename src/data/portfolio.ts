@@ -41,10 +41,10 @@ export const footerSocialLinks = [
 ]
 
 export const stats = [
-  { label: "Internship Months", value: 14 },
-  { label: "Featured Projects", value: 3 },
-  { label: "Technologies", value: 35 },
-  { label: "Achievements", value: 2 },
+  { label: "Internships", value: 3 },
+  { label: "Featured Projects", value: 5 },
+  { label: "Technologies", value: 21 },
+  { label: "Achievements", value: 4 },
 ]
 
 export const technologies = [
