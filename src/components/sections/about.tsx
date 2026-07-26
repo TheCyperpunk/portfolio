@@ -31,7 +31,7 @@ const AnimatedCounter = memo(function AnimatedCounter({ value, label }: { value:
   }, [isInView, value])
 
   return (
-    <div className="text-center relative">
+    <div ref={ref} className="text-center relative">
       <div className="text-3xl sm:text-4xl font-bold font-syne text-white relative">
         <span>{count}+</span>
       </div>
