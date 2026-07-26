@@ -84,15 +84,6 @@ export const BackgroundEffects = memo(function BackgroundEffects() {
 
       <MemoizedParticles />
 
-      <motion.div
-        className="absolute inset-0"
-        style={{
-          background: "conic-gradient(from 0deg at 50% 50%, rgba(168,85,247,0.03) 0deg, transparent 60deg, rgba(124,58,237,0.03) 120deg, transparent 180deg, rgba(168,85,247,0.03) 240deg, transparent 300deg, rgba(168,85,247,0.03) 360deg)",
-          willChange: "transform",
-        }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-      />
     </div>
   )
 })
