@@ -269,57 +269,28 @@ export function Hero() {
         </div>
       </div>
 
-      {/* SVG Arc Background */}
+      {/* Arc Background */}
       <div
-        className="absolute bottom-80 md:bottom-0 md:left-0 w-full pointer-events-none"
+        className="absolute inset-x-0 bottom-80 md:bottom-0 pointer-events-none overflow-hidden"
         style={{ height: "60vh", zIndex: 1 }}
       >
-        <svg
-          className="absolute bottom-0 left-1/2 -translate-x-1/2"
-          viewBox="0 0 1440 720"
-          style={{ width: "110vw", minWidth: "640px" }}
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMax meet"
-        >
-          <defs>
-            <filter id="arc-blur-lg" x="-90%" y="-90%" width="280%" height="280%">
-              <feGaussianBlur stdDeviation="58" />
-            </filter>
-            <filter id="arc-blur-md" x="-70%" y="-70%" width="240%" height="240%">
-              <feGaussianBlur stdDeviation="30" />
-            </filter>
-            <filter id="arc-blur-sm" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation="34" />
-            </filter>
-            <filter id="arc-blur-xs" x="-10%" y="-10%" width="120%" height="120%">
-              <feGaussianBlur stdDeviation="3" />
-            </filter>
-          </defs>
-          <circle
-            cx="720" cy="720" r="580"
-            stroke="#492285" strokeWidth="130"
-            fill="none" filter="url(#arc-blur-lg)"
-            style={{ mixBlendMode: "screen" }}
-          />
-          <circle
-            cx="720" cy="720" r="580"
-            stroke="#4556F8" strokeWidth="55"
-            fill="none" filter="url(#arc-blur-md)"
-            style={{ mixBlendMode: "screen" }}
-          />
-          <circle
-            cx="720" cy="720" r="580"
-            stroke="#ffffff" strokeWidth="24"
-            fill="none" filter="url(#arc-blur-sm)"
-            style={{ mixBlendMode: "screen" }}
-          />
-          <circle
-            cx="720" cy="720" r="580"
-            stroke="rgba(255,255,255,0.38)" strokeWidth="1.5"
-            fill="none" filter="url(#arc-blur-xs)"
-          />
-        </svg>
+        <div
+          className="absolute left-1/2 bottom-[-62vh] h-[118vh] w-[118vh] min-h-[680px] min-w-[680px] -translate-x-1/2 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, transparent 56%, rgba(255,255,255,0.34) 56.2%, rgba(255,255,255,0.12) 56.6%, rgba(99,102,241,0.32) 59%, rgba(124,58,237,0.28) 62%, transparent 70%)",
+            filter: "blur(10px)",
+            mixBlendMode: "screen",
+          }}
+        />
+        <div
+          className="absolute left-1/2 bottom-[-62vh] h-[118vh] w-[118vh] min-h-[680px] min-w-[680px] -translate-x-1/2 rounded-full"
+          style={{
+            border: "1px solid rgba(255,255,255,0.28)",
+            boxShadow:
+              "0 0 80px rgba(168,85,247,0.28), 0 0 150px rgba(99,102,241,0.22)",
+          }}
+        />
       </div>
 
       {/* Scroll indicator */}
